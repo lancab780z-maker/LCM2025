@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> HTML Sistemático </title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		body{
+			font-family: 'Poppins', sans-serif;
+			background: linear-gradient(-45deg, #0f0f0f, #272753, #203d63, #14447b);
+			background-size: 400% 400%;
+			animation: fondoAni 15s ease infinite;
+			min-height: 100vh;
+			color: #e0e0e0;
+		} 
+		@keyframes fondoAni {
+			0% { background-position: 0% 50%;}
+			50% { background-position: 100% 50%;}
+			100% { background-position: 0% 50%;}
+		}
+		header, footer{
+			background: linear-gradient(to right, #5bf1b8, #5d78e5, #893af8, #5d78e5, #5bf1b8);
+			animation: fondoAni 15s ease infinite;
+			background-size: 300% 300%;
+			text-align: center;
+			font-family: 'Lucida Bright', sans-serif;
+			font-size: 22px;
+			font-weight: bold;
+			padding: 18px;
+			border-radius: 12px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+			text-shadow: 5px 5px 5px gray;
+		}
+		ul, ol{
+			list-style: none;
+			padding: 6px 0;
+			transition: transform 0.2s ease;
+		}
+		.nav{
+			list-style: none;
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+		}
+		.nav > li{
+			float: left;
+		}
+		
+		.nav li a{
+			background-color: #111;
+			color: #fff;
+			text-decoration: none;
+			padding: 10px 16px;
+			display: block;
+			border-radius: 8px;
+			transition: all 0.3s ease;
+
+		}
+		.nav li a:hover{
+			background: linear-gradient(to right, #00f5d4, #9d5de5);
+			color: #000;
+			transform: scale(1.08);
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+		}
+		.nav li ul{
+			display: none;
+			position: absolute;
+			min-width: 140px;
+		}
+		.nav li:hover > ul{
+			display: block;
+		}
+		.nav li ul li {
+			position: relative;
+		}
+		.nav li ul li ul{
+			right: -140px;
+			top: 0px;
+		}
+		nav{
+			background: #000;
+			padding: 12px;
+			border-radius: 12px;
+		}
+		main{
+			display: flex;
+			padding: 20px;
+			gap: 20px;
+		}
+		article{ 
+			flex: 1;
+		}
+		section{
+			background: linear-gradient(45deg, #171724, #2a2a42) ;
+			border-left: 5px solid #9b5de5;
+			border-radius: 20px;
+			padding: 20px;
+			margin-bottom: 20px;
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+		}
+		section:hover, aside:hover {
+			transform: scale(1.01);
+			box-shadow: 0 8px 20px rgba(155, 93, 229, 0.3);
+			transition: 0.3s;
+		}
+		aside{
+			border-left: 5px solid #5da1e5;
+			border-radius: 20px;
+			background: linear-gradient(45deg, #171724, #2a2a42) ;
+			color: #e0e0e0;
+			border-radius: 16px;
+			padding: 20px;
+			min-width: 220px;
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+			padding-left: 15px;
+		}
+		.cent {
+			display: block;
+			margin: 0 auto;
+			box-shadow: 0 6px 12px rgba(0, 195, 255, 0.4);
+		}
+		.links-btn {
+			display: inline-block;
+			background: linear-gradient(to right, #3b82f6, #9333ea);
+			color: white;
+			text-decoration: none;
+			padding: 10px 18px;
+			border-radius: 8px;
+			font-weight: bold;
+			transition: transform 0.2s, box-shadow 0.2s;
+			margin-top: 10px;
+		}
+		.links-btn:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+		}
+		a{
+			text-decoration: none;
+			color: #000;
+		}
+		html {
+			scroll-behavior: smooth;
+		}
+		@media (max-width: 768px) {
+			main {
+				flex-direction: column;
+				align-items: center;
+			}
+			aside {
+				width: 100%;
+				margin-top: 20px;
+			}
+		}
+		img:hover {
+			transform: scale(1.05);
+			filter: brightness(1.1);
+			transition: 0.3s ease;
+		}
+		h1, h2 {
+			animation: aparecer 1s ease forwards;
+			opacity: 0;
+		}
+		@keyframes aparecer {
+			from { opacity: 0; transform: translateY(15px);}
+			to { opacity: 1; transform: translateY(0);}
+		}
+	</style>
+</head>
+<body>
+	<header> <h2>Liceo Compu-Market</h2>
+		<br> Bachillerato en computación
+	</header>
+	<nav>
+		 <ul class="nav">
+		 	<li><a href="#nuevo"> Inicio </a></li>
+		 	<li><a href="#ini"> Sobre la carrera </a></li>
+			<li><a href=""> Cursos </a>
+		 		<ul>
+		 			<li><a href="#ef"> Educación Física </a></li>
+		 			<li><a href="#it"> Inglés Técnico </a></li>
+		 			<li><a href="#ci"> computación/Instalación </a></li>
+		 			<li><a href="#cl"> Comunicación </a></li>
+		 			<li><a href="#ff"> Física Fundamental</a></li>
+		 			<li><a href="#ma"> Matemáticas </a></li>
+		 			<li><a href="#cg"> Contabilidad </a></li>
+		 			<li><a href="#es"> Estudios Sociales </a></li>
+		 			<li><a href="#prg"> Programación </a></li>
+		 			<li><a href="#ee"> Estadística </a></li>
+		 		</ul></li>
+		 	<li><a href="#con"> Logo </a></li>
+		 </ul>
+	</nav>
+	<main>
+		<article>
+			<section id="ini"> 
+				<h1 id="sn"> Sobre La Carrera </h1>
+				<h2 id="mis"> Bachillerato en computación con orientación científica </h2>
+				<p> La carrera es un programa educativo que combina una sólida base en ciencias y matemáticas con una profunda formación en computación, programación y tecnología. Su objetivo es desarrollar estudiantes con pensamiento lógico y crítico, capaces de resolver problemas complejos y de adaptarse a los avances tecnológicos. Esta carrera prepara a los jóvenes para seguir estudios universitarios en áreas científicas y tecnológicas, como diversas ingenierías, y para desempeñarse en el campo profesional con habilidades en análisis, programación, instalación de software y soporte técnico. </p>
+			</section>
+			<section id="pro">
+				<h1 id="car"> Cursos </h1>
+				<h2 id="ef"> Educación Física </h2><br>
+				<p> Esta curso trata sobre el desarrollo integral del individuo a través del movimiento, abarcando el cuidado de la salud física y mental, la mejora de las habilidades motrices y la adquisición de valores como el respeto, la solidaridad y el trabajo en equipo. Su objetivo es educar en el conocimiento y uso del propio cuerpo, fomentar un estilo de vida saludable y promover la autonomía y autogestión en la actividad física. </p><br>
+				<img src="https://www.redem.org/wp-content/uploads/2024/08/FOYFNYKTHVAWNPOJGCOBWKJTEM.webp" width="300" class="cent"> <br>
+				<hr>
+				<h2 id="it"> Inglés Técnico </h2>
+				<p> Este curso  se enfoca en enseñar a los profesionales el vocabulario, la terminología y las expresiones específicas de un sector o industria particular, como la ingeniería, la medicina o la informática. Su objetivo es mejorar la comunicación en un contexto laboral, permitiendo a los alumnos comprender y producir textos especializados como manuales y reportes, y comunicarse con precisión en su campo profesional. </p><br>
+				<img src="https://d2a5isokysfowx.cloudfront.net/wp-content/uploads/2020/12/ingles-tecnico-para-ingenieros-de-software-1-scaled.jpg" width="300" class="cent"> <br>
+				<hr>
+				<h2 id="ci"> computación/Instalación </h2>
+				<p> Este curso enseña los fundamentos del hardware y el software de una computadora, cómo instalar sistemas operativos y programas, y cómo realizar tareas básicas como navegar por internet y organizar archivos de forma segura. El curso puede incluir la resolución de problemas durante la instalación, la importancia de las actualizaciones de seguridad y el mantenimiento del equipo, y la comprensión de los conceptos de redes. </p><br>
+				<img src="https://www.galileo.edu/pdh/files/2023/08/smiley-man-working-laptop-from-home.jpg" width="300" class="cent"><br>
+				<hr>
+				<h2 id="cl"> Comunicación y literatura </h2>
+				<p> Este curso  generalmente se enfoca en el análisis crítico de obras literarias (novelas, cuentos, poesía, teatro) para comprender su historia, contexto cultural y significado. Además, desarrolla habilidades de lectura crítica, escritura y comunicación oral, fomenta la reflexión sobre temas universales, y permite explorar la historia, las corrientes y las técnicas literarias para apreciar el arte de la escritura.  </p><br>
+				<img src="https://www.lifeder.com/wp-content/uploads/2020/03/concepto-literatura-libros-min-1024x682.jpg" width="300" class="cent"><br>
+				<hr>
+				<h2 id="ff"> Física Fundamental </h2>
+				<p> Este curso cubre los conceptos y leyes básicos que rigen el universo, desde el movimiento de partículas hasta la energía y las fuerzas, y suele incluir temas como mecánica clásica, electromagnetismo, termodinámica, ondas y relatividad. El objetivo es que los estudiantes desarrollen una visión general de la física, comprendan las herramientas matemáticas necesarias y aprendan a aplicar el razonamiento lógico para analizar y resolver problemas en el mundo real.  </p><br>
+				<img src="https://clasesytutores.com/wp-content/uploads/2021/07/FISICA.jpg" width="300" class="cent"><br>
+				<hr>
+				<h2 id="ma"> Matemáticas </h2>
+				<p> Este curso trata sobre los conceptos fundamentales de la ciencia que estudia los números, cantidades, espacio y sus relaciones, como el álgebra, cálculo, geometría y estadística. El objetivo es desarrollar habilidades de razonamiento lógico, análisis y resolución de problemas aplicables a diversas áreas de la vida y del conocimiento científico, mejorando la comprensión del mundo y la capacidad para tomar decisiones informadas. </p><br>
+				<img src="https://universidadeuropea.com/resources/media/images/requisitos-profesor-matematicas-800x450.width-640.jpg" width="300" class="cent"><br>
+				<hr>
+				<h2 id="cg"> Contabilidad </h2>
+				<p> Este curso trata enseña los principios para registrar, analizar e informar sobre las operaciones financieras de una entidad, permitiendo a los estudiantes desarrollar habilidades para la gestión de finanzas, la elaboración de estados financieros y el cumplimiento fiscal. Se enfoca en el registro de transacciones económicas, el uso de herramientas como el plan de cuentas y software especializado, y la interpretación de la realidad económica para tomar decisiones informadas.  </p><br>
+				<img src="https://emprendepyme.net/wp-content/uploads/2023/03/clasificacion-contabilidad-1200x675.jpg" width="300" class="cent"><br>
+				<hr>
+				<h2 id="es"> Estudios Sociales </h2>
+				<p> Este curso trata sobre el estudio de la sociedad y el comportamiento humano, utilizando enfoques interdisciplinarios de materias como historia, geografía, economía, sociología y ciencia política para comprender las interacciones de las personas y las comunidades a nivel local, nacional y global. Su objetivo es desarrollar ciudadanos informados y activos, capaces de tomar decisiones razonadas para el bien común y de abordar los desafíos sociales contemporáneos con una perspectiva ética y compromiso ciudadano. </p><br>
+				<img src="https://media.istockphoto.com/id/1132078522/es/foto/globo-de-cristal-del-mundo-en-bosquejo-del-esquema-del-mapa-del-mundo-en-la-p%C3%A1gina-de-papel.jpg?s=612x612&w=0&k=20&c=bmvF3AmGRsWJPru0KepVFUc85P-y5hQfYXDHBVABP8k=" width="300" class="cent"><br>
+				<hr>
+				<h2 id="pgr"> Programación </h2>
+				<p> Este curso trata enseña a resolver problemas creando algoritmos (secuencias de pasos) para que las computadoras los ejecuten, utilizando lenguajes de programación como Python o Java. Aprenderás habilidades fundamentales como variables, funciones, condicionales y bucles, y podrás crear desde sitios web y aplicaciones hasta videojuegos y soluciones para el análisis de datos. </p><br>
+				<img src="https://www.epitech-it.es/wp-content/uploads/2022/06/historia-de-la-programacion-1.jpg" width="300" class="cent"><br>
+				<hr>
+				<h2 id="ee"> Estadística </h2>
+				<p> Este curso trata enseña a recopilar, organizar, analizar e interpretar datos para tomar decisiones informadas y predecir tendencias. Se abordan técnicas tanto descriptivas (cómo resumir datos) como inferenciales (cómo hacer predicciones a partir de muestras) y su aplicación en diversos campos, utilizando herramientas matemáticas y tecnológicas para transformar datos numéricos en información útil. </p><br>
+				<img src="https://concepto.de/wp-content/uploads/2020/12/estadistica-e1607728657107.jpg" width="300" class="cent"><br>
+			</section>
+			<section id="con">
+				<h1 id="jor"> Logo LCM </h1>
+				<ul>
+					<li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvGQInlqL3WQx3fFC79OtuIZzEJvAsL_M2YA&s" width="300" class="cent">  </li>
+				</ul>
+			</section>
+		</article>
+		<aside>
+			<center>
+			<h3 class="barraL"> Contenido relacionado </h3>
+			<hr>
+			<h2> Liceo Compu-Market </h2>
+			</center>
+			<br>
+			<br>
+			<ol>
+				<li><a href="https://www.waze.com/es-419/live-map/directions/liceo-compu-market-4a-avenida-29-villa-nueva?to=place.w.176554129.1765606829.10178819" target="_blank" class="links-btn"><img src="https://cdn-icons-png.flaticon.com/512/6683/6683352.png" alt="Historia" style="width: 20px;"> Ubicación  </a> </li>
+				<li><a href="https://liceocompumarket.wordpress.com/" target="_blank" class="links-btn"><img src="https://cdn-icons-png.flaticon.com/512/2234/2234770.png" alt="Historia" style="width: 20px;"> Historia  </a> </li>
+				<li><a href="https://www.facebook.com/LiceoCM/?locale=es_LA" target="_blank" class="links-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/250px-2021_Facebook_icon.svg.png" alt="facebook" style="width: 20px;"> facebook  </a> </li>
+			</ol>
+		</aside>
+	</main>
+	<footer>
+		<div class="piepag">  </div>
+		<h1>Liceo Compu-Market</h1>
+		<h2> 4ta Avenida 6-29 Z.1. Villa Nueva Guatemala </h2>
+		<h3> Teléfono; 6636 0705 </h3>
+		<h3> Tu pasaporte al exito </h3>
+	</footer>
+</body>
+</html>
